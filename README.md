@@ -1,4 +1,4 @@
-# 🧹 WinWipe
+# 🧹 winwipe
 
 To execute **winwipe**, run this in PowerShell:
 ```
@@ -6,7 +6,7 @@ irm https://winwipe.gergo.cc | iex
 ```
 
 ## Overview
-**WinWipe** is a PowerShell script designed to remove unnecessary user files from public school PCs, providing a clean slate every time you sit down. It ensures that personal data, browser profiles, and user-specific configurations are wiped, leaving only essential system files.
+**winwipe** is a PowerShell script designed to remove unnecessary user files from public school PCs, providing a clean slate every time you sit down. It ensures that personal data, browser profiles, and user-specific configurations are wiped, leaving only essential system files.
 
 ## ✨ Features
 - 🚫 Deletes all profiles and data for:
