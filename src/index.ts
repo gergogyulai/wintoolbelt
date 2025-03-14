@@ -11,13 +11,19 @@ app.get('/', async (c) => {
     })
     return response
   } else {
-    return c.text('To run this script, use the following command in PowerShell:\n\nirm https://winwipe.gergo.cc | iex \n\n\Check the docs at: "https://winwipe/gergo.cc/docs', 200)
+    return c.text(
+      `To run this script, use the following command in PowerShell:
+
+      irm https://winwipe.gergo.cc | iex
+
+      Check the docs at: https://winwipe.gergo.cc/docs`, 
+      200
+    )
   }
 })
 
-app.get("/docs", async (c)=>{
+app.get("/docs", async (c) => {
   c.redirect('https://github.com/gergogyulai/winwipe', 301)
 })
-
 
 export default app
