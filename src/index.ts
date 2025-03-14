@@ -23,7 +23,7 @@ app.get('/', async (c) => {
 })
 
 app.get("/docs", async (c) => {
-  c.redirect('https://github.com/gergogyulai/winwipe', 301)
+  return c.redirect('https://github.com/gergogyulai/winwipe', 301)
 })
 
 export default app
