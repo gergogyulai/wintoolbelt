@@ -22,7 +22,7 @@ irm https://winwipe.gergo.cc | iex
   - Music 🎵
   - Videos 🎥
   - 3D Objects 🏗
-- 🔥 Removes all files in the user's directory except:
+- 🔥 Removes everything in the user's directory except:
   - `Desktop`
   - `Documents`
   - `Downloads`
