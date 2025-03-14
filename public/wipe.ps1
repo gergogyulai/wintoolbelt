@@ -2,8 +2,14 @@
 # Ensure you have backed up any important files before proceeding.
 
 # Ask for confirmation
-$confirmation = Read-Host "WARNING: This script will permanently delete data from your user account. Are you sure you want to continue? (Y/N)"
+$confirmation = Read-Host "For the best results close everything before executing Are you sure you want to continue? (Y/N)"
 if ($confirmation -ne "Y") {
+    Write-Host "Operation cancelled."
+    exit
+}
+
+$execconfirmation = Read-Host "WARNING: This script will permanently delete data from your user account. Are you sure you want to continue? (Y/N)"
+if ($execconfirmation -ne "Y") {
     Write-Host "Operation cancelled."
     exit
 }
