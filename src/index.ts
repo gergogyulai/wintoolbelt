@@ -9,6 +9,7 @@ app.get('/', async (c) => {
     const response = await fetch('https://raw.githubusercontent.com/gergogyulai/winwipe/main/public/wipe.ps1', {
       headers: { 'Content-Type': 'text/plain' }
     })
+
     return response
   } else {
     return c.text(
@@ -23,7 +24,7 @@ app.get('/', async (c) => {
 })
 
 app.get("/docs", async (c) => {
-  return c.redirect('https://github.com/gergogyulai/winwipe', 301)
+  return c.redirect('https://github.com/gergogyulai/winwipe/blob/main/README.md', 301)
 })
 
 export default app
