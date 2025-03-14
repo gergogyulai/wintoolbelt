@@ -11,7 +11,7 @@ app.get('/', async (c) => {
     })
     return response
   } else {
-    return c.text('To run this script, use the following command in PowerShell:\n\nirm https://winwipe.gergo.cc | iex \n\n\ Check the docs at: "https://winwipe/gergo.cc/docs', 200)
+    return c.text('To run this script, use the following command in PowerShell:\n\nirm https://winwipe.gergo.cc | iex \n\n\Check the docs at: "https://winwipe/gergo.cc/docs', 200)
   }
 })
 
