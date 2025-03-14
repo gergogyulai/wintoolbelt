@@ -24,7 +24,7 @@ if ($execconfirmation -ne "Y") {
 $UserProfile = $env:USERPROFILE
 
 # ----- 1. Clean specified folders (Desktop, Documents, Downloads, Pictures, Music) -----
-$foldersToClean = @("Desktop", "Documents", "Downloads", "Pictures", "Music")
+$foldersToClean = @("Desktop", "Documents", "Downloads", "Pictures", "Music", "Videos", "3D Objects")
 foreach ($folder in $foldersToClean) {
     $folderPath = Join-Path $UserProfile $folder
     if (Test-Path $folderPath) {
@@ -44,7 +44,7 @@ Get-ChildItem -Path $UserProfile -File | ForEach-Object {
 }
 
 # ----- 3. Remove all directories in the user profile except the keep list -----
-$keepFolders = @("Desktop", "Documents", "Downloads", "Pictures", "Music", "AppData")
+$keepFolders = @("Desktop", "Documents", "Downloads", "Pictures", "Music", "Videos", "3D Objects", "AppData")
 Get-ChildItem -Path $UserProfile -Directory | ForEach-Object {
     if ($keepFolders -notcontains $_.Name) {
         Write-Host "Removing directory: $($_.FullName)"
