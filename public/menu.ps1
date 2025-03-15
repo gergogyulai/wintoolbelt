@@ -34,7 +34,7 @@ function Show-Menu {
         while ($true) {
             Clear-Host
             Write-Host "============================" -ForegroundColor Cyan
-            Write-Host "     Windows Tool Belt" -ForegroundColor Cyan
+            Write-Host "     Windows ToolBelt" -ForegroundColor Cyan
             Write-Host "============================" -ForegroundColor Cyan
             Write-Host ""
             Write-Host "Navigation options:" -ForegroundColor Yellow
