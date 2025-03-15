@@ -1,58 +1,67 @@
-# 🧹 winwipe
+# 🛠 wintoolbelt
 
-To execute **winwipe**, run this in PowerShell:
+To execute **wintoolbelt**, run this in PowerShell:
 ```
-irm https://winwipe.gergo.cc | iex
+irm https://wtb.gergo.cc | iex
 ```
 
 ## Overview
-**winwipe** is a PowerShell script designed to remove unnecessary user files from public school PCs, providing a clean slate every time you sit down. It ensures that personal data, browser profiles, and user-specific configurations are wiped, leaving only essential system files.
+**wintoolbelt** is a collection of tools designed to clean up and refresh public school PCs. It helps to delete user data, browser profiles, and unnecessary files, ensuring a clean slate every time you sit down. It also provides additional features for managing the veyon service.
 
-## ✨ Features
-- 🚫 Deletes all profiles and data for:
-  - Google Chrome 🌐
-  - Brave 🦁
-  - Mozilla Firefox 🦊
-  - Microsoft Edge 🎭
-- 🗑 Wipes everything from the current user's folders:
-  - Desktop 🖥
-  - Documents 📄
-  - Downloads ⬇️
-  - Pictures 🖼
-  - Music 🎵
-  - Videos 🎥
-  - 3D Objects 🏗
-- 🔥 Removes everything in the user's directory except:
-  - `Desktop`
-  - `Documents`
-  - `Downloads`
-  - `Pictures`
-  - `Music`
-  - `Videos`
-  - `3D Objects`
-  - `AppData`
-- 🛠 Deletes Visual Studio Code profiles, extensions, and configuration files.
+## 🧰 Available Tools
+
+### 🧹 Cleanup Tool (wipe)
+The cleanup tool is the main feature of **wintoolbelt**. It deletes user data, browser profiles, and unnecessary files from the system. 
+
+#### What it cleans
+- **Browser Data** 🌐
+  - Google Chrome
+  - Brave
+  - Mozilla Firefox
+  - Microsoft Edge
+
+- **User Folders** 📁
+  - Desktop
+  - Documents
+  - Downloads
+  - Pictures
+  - Music
+  - Videos
+  - 3D Objects
+  - Also removes every folder and file in the user's profile directory that is not a system folder
+  
+- **Development Tools** 💻
+  - VS Code profiles
+  - VS Code extensions
+  - Configuration files (.gitconfig, .bashrc, etc.)
+
+### 🎮 Veyon Tool (veyon)
+Take control of the Veyon service with this tool. It allows you to start, stop, enable, and disable the service.
 
 ## 🚀 Usage
 
-### Recommended usage
-To quickly execute **winwipe**, run the following command in PowerShell:
+### Recommended Usage
+To quickly execute **wintoolbelt**, run the following command in PowerShell:
 ```
-irm https://winwipe.gergo.cc | iex
+irm https://wtb.gergo.cc | iex
 ```
-This will execute the latest version of the script directly from the repo.
+If the recommended URL is unavailable, you can use the following alternative:
+```
+irm https://raw.githubusercontent.com/gergogyulai/winwipe/refs/heads/main/public/menu.ps1 | iex
+```
+This will execute the latest version of the tool selector directly from the repo.
 
-### Backup URL
-If the main URL is unavailable, you can use the following alternative:
+### Specific Tasks
+If you need to run specific tools, use these URLs:
+- **veyon only**: `irm https://wtb.gergo.cc/veyon | iex`
+- **wipe only**: `irm https://wtb.gergo.cc/wipe | iex`
+
+### Running Manually
+If none of the hosted versions of the script are working, you can run it directly from your computer:
 ```
-irm https://raw.githubusercontent.com/gergogyulai/winwipe/refs/heads/main/public/wipe.ps1 | iex
-```
-### Running Manual
-If none of the hosted versions of the script are working, you can run it directly from you computer
-```
-git clone https://github.com/gergogyulai/winwipe
-cd winwipe/public
-./wipe.ps1
+git clone https://github.com/gergogyulai/wintoolbelt
+cd wintoolbelt/public
+./menu.ps1
 ```
 
 ## ⚠️ Warning
@@ -60,5 +69,4 @@ cd winwipe/public
 - Running this script may require administrative privileges.
 
 ## 📜 License
-This project is released under the MIT License.
-
+This project is released under the MIT License. For more information, see the [LICENSE](LICENSE) file.
