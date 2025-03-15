@@ -1,6 +1,6 @@
 # 🛠 wintoolbelt
 
-To execute **wintoolbelt**, run this in PowerShell:
+To execute **wintoolbelt**, run this in an Administrator PowerShell:
 ```
 irm https://wtb.gergo.cc | iex
 ```
