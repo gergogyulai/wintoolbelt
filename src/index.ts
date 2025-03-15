@@ -4,15 +4,31 @@ import { strings } from "./strings";
 
 const app = new Hono<{ Bindings: CloudflareBindings }>()
 
+const repo = 'https://raw.githubusercontent.com/gergogyulai/winwipe/main/public'
+
 app.get('/', withUserAgentValidation(async () => {
-  const response = await fetch('https://raw.githubusercontent.com/gergogyulai/winwipe/main/public/wipe.ps1', {
+  const response = await fetch(`${repo}/wipe.ps1`, {
+    headers: { 'Content-Type': 'text/plain' }
+  });
+  return response;
+}, { fallbackText: strings.wipeUseragentError }));
+
+app.get('/select', withUserAgentValidation(async () => {
+  const response = await fetch(`${repo}/menu.ps1`, {
+    headers: { 'Content-Type': 'text/plain' }
+  });
+  return response;
+}, { fallbackText: strings.selectUseragentError }));
+
+app.get('/wipe', withUserAgentValidation(async () => {
+  const response = await fetch(`${repo}/wipe.ps1`, {
     headers: { 'Content-Type': 'text/plain' }
   });
   return response;
 }, { fallbackText: strings.wipeUseragentError }));
 
 app.get('/veyon', withUserAgentValidation(async () => {
-  const response = await fetch('https://raw.githubusercontent.com/gergogyulai/winwipe/main/public/veyon.ps1', {
+  const response = await fetch(`${repo}/veyon.ps1`, {
     headers: { 'Content-Type': 'text/plain' }
   });
   return response;
