@@ -123,6 +123,27 @@ if (Test-Path $tempPath) {
     Write-Host "Temporary files directory not found at $tempPath"
 }
 
+# Define the path to the Temp directory
+$tempPath = "C:\Users\Tanulo\AppData\Local\Temp"
+if (Test-Path $tempPath) {
+    Write-Host "Cleaning up temporary files from: $tempPath"
+
+    $items = Get-ChildItem -Path $tempPath -Recurse -ErrorAction SilentlyContinue
+
+    foreach ($item in $items) {
+        try {
+            Remove-Item -Path $item.FullName -Recurse -Force -ErrorAction Stop
+            Write-Host "Deleted: $($item.FullName)"
+        } catch {
+            Write-Host "Failed to delete: $($item.FullName) - $($_.Exception.Message)"
+        }
+    }
+
+    Write-Host "Cleanup completed."
+} else {
+    Write-Host "Temp directory not found at: $tempPath"
+}
+
 # Optionally, remove the .vscode folder from the user profile (commonly used for extensions and settings)
 $vscodeUserPath = Join-Path $UserProfile ".vscode"
 if (Test-Path $vscodeUserPath) {
