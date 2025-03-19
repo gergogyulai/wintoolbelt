@@ -113,6 +113,16 @@ if (Test-Path $vscodeAppDataPath) {
     Write-Host "VS Code configuration folder not found at $vscodeAppDataPath"
 }
 
+# Remove temporary files from the %TEMP% directory
+$tempPath = $env:TEMP
+if (Test-Path $tempPath) {
+    Write-Host "Removing temporary files from: $tempPath"
+    Remove-Item "$tempPath\*" -Recurse -Force -ErrorAction SilentlyContinue
+    Write-Host "Temporary files have been removed."
+} else {
+    Write-Host "Temporary files directory not found at $tempPath"
+}
+
 # Optionally, remove the .vscode folder from the user profile (commonly used for extensions and settings)
 $vscodeUserPath = Join-Path $UserProfile ".vscode"
 if (Test-Path $vscodeUserPath) {
